@@ -1,6 +1,7 @@
 """ PROGRAMA PARA CALCULAR LAS NOTAS DE N ESTUDIANTES.. """
 import os
 alumnos = []
+notas = []
 isActive = True
 suma_de_notas = 0
 menu = "1. Registrar Alumno\n2. Registrar Notas\n3. Buscar Estudiante\n4. Salir\n:"
@@ -107,18 +108,18 @@ while isActive:
                             input("Presione Enter para continuar...")
                             continue
 
-                        if alumno[3]:
-                            total_parciales = sum(alumno[3]) * 0.6
+                        if notas[3]:
+                            total_parciales = sum(notas[3]) * 0.6
                         else:
                             total_parciales = 0
 
-                        if alumno[4]:
-                            total_quices = sum(alumno[4]) * 0.25
+                        if notas[4]:
+                            total_quices = sum(notas[4]) * 0.25
                         else:
                             total_quices = 0
 
-                        if alumno[5]:
-                            total_trabajos = sum(alumno[5]) * 0.15
+                        if notas[5]:
+                            total_trabajos = sum(notas[5]) * 0.15
                         else:
                             total_trabajos = 0
 
