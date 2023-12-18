@@ -1,11 +1,9 @@
-"""
-PROGRAMA PARA CALCULAR LAS NOTAS DE N ESTUDIANTES..
-"""
+""" PROGRAMA PARA CALCULAR LAS NOTAS DE N ESTUDIANTES.. """
 import os
 alumnos =[]
 isActive = True
 menu = "1. Registrar Alumno\n2. Registrar Notas\n3. Buscar Estudiante\n4. Salir\n:)"
-subMenuNotas = ["Parciales","Quices","Trabajos","Regresar al menu principal"]
+subMenuNotas = ["Parciales","Quices","Trabajos","Regresar al menu principal","Imprimir Notas"]
 opMenu=0
 while (isActive) :
     os.system("cls")
@@ -98,8 +96,23 @@ while (isActive) :
                                 isAddGrades = False
                     elif (opNotas == 4):
                         isActiveGrades = False
-                    else:
-                        pass
+                    elif opNotas == 5:
+                        codigo = input("Ingrese el Codigo del Estudiante: ")
+                        for item in alumnos:
+                             if codigo in item:
+                                alumno = item
+                                break
+                        else:
+                            print("Estudiante no encontrado.")
+                            input("Presione Enter para continuar...")
+                            continue
+
+                        for key, valor in enumerate(alumno):
+                            if type(valor) == list and valor:
+                                print(f"{subMenuNotas[key - 3]}: {valor}")
+                            else:
+                                print("No se encontro la data")
+                                print("------------------------")                        
         elif (opMenu == 3):
             codigo = input("Ingrese el codigo del estudiante: ")
             for item in alumnos:
@@ -114,3 +127,4 @@ while (isActive) :
             os.system("cls")
             print("Opcion invalida")
     os.system("pause")
+
